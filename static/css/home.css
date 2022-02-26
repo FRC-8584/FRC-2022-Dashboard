@@ -1,0 +1,125 @@
+@import url(global_setting.css);
+
+#blocks {
+    height: calc(100% - 112px);
+    margin: 12px;
+    display: flex;
+}
+
+#blocks .block {
+    margin: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgb(62, 62, 62);
+    background-color: rgb(40, 40, 40);
+}
+
+#blocks #user-info {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    padding: 24px;
+}
+
+#blocks #user-info img {
+    width: 70%;
+    border-radius: 50%;
+}
+
+#blocks #user-info p {
+    color: rgb(255, 255, 255);
+    margin: 1em 0px;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+#blocks #user-info p:first-of-type {
+    margin: 0px;
+    font-size: 2em;
+    text-align: center;
+}
+
+#blocks #user-info hr {
+    height: 2px;
+    border: none;
+    background-color: rgb(62, 62, 62);
+}
+
+#blocks #info {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#blocks #info #events {
+    flex: 3;
+}
+
+#blocks #info #lab-info {
+    flex: 2;
+    display: flex;
+    padding: 24px 0px;
+    justify-items: center;
+    align-items: center;
+}
+
+#blocks #info #lab-info .info-block {
+    flex: 1;
+    height: 100%;
+    padding: 0px 24px;
+}
+
+#blocks #info #lab-info .info-block p,
+#blocks #info #lab-info .info-block a {
+    margin: 12px 0px;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+#blocks #info #lab-info .info-block .info-title {
+    margin: 0px;
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+#blocks #info #lab-info .info-block hr {
+    height: 1px;
+    width: 100%;
+    margin: 12px 0px;
+    border: none;
+    background-color: rgb(62, 62, 62);
+}
+
+#blocks #info #lab-info hr {
+    height: 100%;
+    width: 2px;
+    margin: 0px;
+    border: none;
+    background-color: rgb(62, 62, 62);
+}
+
+@media (max-aspect-ratio: 1/1)  {
+    #content {
+        height: auto;
+    }
+
+    #blocks {
+        height: 300vh;
+        flex-direction: column;
+    }
+
+    #blocks #info #lab-info {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #blocks #info #lab-info hr {
+        height: 1px;
+        width: calc(100% - 24px);
+        margin: 12px 12px;
+    }
+}

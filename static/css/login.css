@@ -1,0 +1,104 @@
+@import url(global_setting.css);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+TC:200,300,400,700);
+
+.main {
+    height: 100%;
+    background-image: url(../img/login_background.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+}
+
+.login-block {
+    width: 350px;
+    height: 40%;
+    min-height: 350px;
+    background-color: rgb(255, 255, 255, 0.3);
+    margin: 2% auto 0 auto;
+    border-style: none;
+    border-radius: 5%;
+    padding: 15px;
+    text-align: center;
+}
+
+.login-block h2 {
+    margin: 0px;
+    margin-bottom: 5%;
+    font-size: 3.5em;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 2px 2px 4px #23203b;
+}
+
+.login-block .input-block {
+    margin: 0px;
+    border-style: solid;
+    border-color: rgb(100, 100, 100, 0.7);
+    border-width: 0px;
+    border-bottom-width: 1px;
+    padding: 1% 0px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.login-block .input-block:first-of-type {
+    border-top-width: 1px;
+}
+
+.login-block .input-block p {
+    margin: 0px;
+    font-size: 2.5em;
+    color: rgb(50, 50, 50, 0.8);
+}
+
+.login-block .input-block input {
+    width: 100%;
+    border-color: transparent;
+    font-family: "Noto Sans TC", serif;
+    font-size: 1.7em;
+    background-color: transparent;
+}
+
+.login-block .submit button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.8em;
+    border-color: transparent;
+    border-width: 0px;
+    border-radius: 10px;
+    border-bottom-width: 4px;
+    border-bottom-color: rgb(200, 200, 200, 0.7);
+    padding-top: 4px;
+    padding-bottom: 8px;
+    font-size: 2em;
+    text-shadow: 0.05em 0.05em 0.1em rgb(35, 32, 59, 0.7);
+    cursor: pointer;
+}
+
+.login-block .submit button:hover {
+    transition: 0.1s;
+    transform: translateY(-2px);
+}
+
+.login-block .login-fail {
+    background-color: rgba(255, 79, 79, 0.7);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.login-block .login-fail p {
+    margin: 0px;
+}
+
+.login-block .login-fail .message {
+    margin-left: 5px;
+}

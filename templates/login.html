@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="../static/js/include-html.js"></script> -->
+        <title>登入 - EELAB Web Console</title>
+        <link rel="stylesheet" href="../static/css/login.css">
+        <link rel="icon" href="../static/img/favicon.ico">
+        <script>
+            function keyLogin(){
+            if (event.keyCode==13)
+                document.getElementById("login_button").click();
+            }
+        </script>
+        <script src="../static/js/login.js"></script>
+    </head>
+    <body onkeydown="keyLogin()">
+        <div class="main">
+            <div class="login-block">
+                <h2 class="font">Login</h2>
+                <div class="input-block">
+                    <p class="material-icons">account_circle</p>
+                    <input class="account font" placeholder="Account">
+                </div>
+                <div class="input-block">
+                    <p class="material-icons">password</p>
+                    <input type="password" class="password font" placeholder="Password">
+                </div>
+                <div class="submit">
+                    <button id="login_button" class="font" onclick="logincheck()"><b>Sign in</b></button>
+                </div>
+                <div class="login-fail" style="display: none;">
+                    <p class="material-icons">warning</p>
+                    <p class="message">登入失敗，請檢查帳號或密碼。</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
