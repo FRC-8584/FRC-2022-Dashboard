@@ -1,9 +1,51 @@
 @import url(global_setting.css);
 
-form {
-    height: 100%;
+.row_flex {
     display: flex;
     flex-direction: row;
+}
+
+.input_block {
+    width: 100%;
+    padding: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.input_block p {
+    margin: 0px;
+    flex: 1;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+.input_block input {
+    margin: 0;
+    flex: 3;
+    background-color: rgb(255, 255, 255, 0);
+    border-style: solid;
+    border-color: rgb(100, 100, 100, 0.7);
+    border-width: 0px;
+    border-bottom-width: 1px;
+    font-size: 16px;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 12px;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+}
+
+.sec_title {
+    margin: 0;
+    margin-bottom: 12px;
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+}
+
+#form {
+    height: 100%;
     align-items: stretch;
 }
 
@@ -27,45 +69,41 @@ form {
     border-color: rgb(62, 62, 62);
     background-color: rgb(40, 40, 40);
     padding: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
-.input_block {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 0;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-.input_block p {
-    margin: 0;
+#data .row_flex {
     flex: 1;
 }
-.input_block input {
-    margin: 0;
-    flex: 3;
-    background-color: rgb(255, 255, 255, 0);
-    border-style: solid;
-    border-color: rgb(100, 100, 100, 0.7);
-    border-width: 0px;
-    border-bottom-width: 1px;
-    font-size: 16px;
+
+#data .sec_data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.title {
-    margin: 0;
-    margin-bottom: 12px;
-    font-size: 32px;
+#data .sec_data .check_block {
+    justify-items: center;
+    align-items: center;
+    flex: 1;
+    font-size: 20px;
     color: rgb(255, 255, 255);
 }
-
-.index {
+#data .sec_data .check_block p {
     margin: 0;
-    margin-bottom: 12px;
-    font-size: 24px;
-    color: rgb(255, 255, 255);
 }
 
 @media (max-aspect-ratio: 1/1)  {
-    
+    #form {
+        flex-direction: column;
+    }
+
+    .input_block p {
+        font-size: 1em;
+    }
+    .input_block input {
+        font-size: 0.8em;
+    }
 }

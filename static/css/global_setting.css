@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap);
+@import url(../fonts/Oooh_Baby/Oooh_Baby.css);
 @import url(../fonts/Noto_Sans_TC/Noto_Sans_TC.css);
 @import url(../fonts/Material_Icons/Material_Icons.css);
 
@@ -31,4 +31,5 @@ body {
     background-color: rgb(31, 31, 31);
     padding: 8px;
     padding-top: 72px;
+    padding-left: 48px;
 }

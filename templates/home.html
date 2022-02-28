@@ -7,31 +7,45 @@
         <link rel="stylesheet" href="../static/css/home.css">
         <link rel="icon" href="../static/img/favicon.ico">
         <script src="../static/js/include-html.js"></script>
+        <script src="../static/js/side-bar.js"></script>
     </head>
     <body>
         <div id="top-bar" include-html="top-bar.html"></div>
+        <div id="side-bar" include-html="side-bar.html"></div>
         <div id="content">
-            <form action="/", method="post">
+            <div id="form" class="row_flex">
                 <div id="info">
                     <p class="cfont title">填寫人資訊</p>
-                    <div class="input_block">
-                        <p class="cfont index">姓名</p>
+                    <div class="input_block row_flex">
+                        <p class="cfont">姓名</p>
                         <input class="cfont" placeholder="請輸入您的姓名">
                     </div>
-                    <div class="input_block">
-                        <p class="cfont index">紀錄隊伍</p>
+                    <div class="input_block row_flex">
+                        <p class="cfont">紀錄隊伍</p>
                         <input class="cfont" placeholder="請輸入你所記錄的隊伍編號">
                     </div>
-                    <div class="input_block">
-                        <p class="cfont index">紀錄場次</p>
+                    <div class="input_block row_flex">
+                        <p class="cfont">紀錄場次</p>
                         <input class="cfont" placeholder="請輸入你所記錄的比賽場次">
                     </div>
                 </div>
                 <div id="data">
-                    <p class="cfont title">紀錄資料</p>
-                    <input placeholder="請輸入隊伍編號">
+                    <p class="cfont title">紀錄資訊</p>
+                    <div class="row_flex">
+                        <div class="sec_data">
+                            <p class="cfont sec_title">自動階段</p>
+                            <div class="check_block row_flex">
+                                <p class="cfont">滑行成功</p>
+                                <input type="checkbox" class="cfont">
+                            </div>  
+                        </div>
+                        <hr>
+                        <div class="sec_data">
+
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </body>
     <script>includeHTML()</script>
