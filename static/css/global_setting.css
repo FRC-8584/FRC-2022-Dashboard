@@ -33,3 +33,9 @@ body {
     padding-top: 72px;
     padding-left: 48px;
 }
+
+@media (max-aspect-ratio: 1/1) {
+    #content {
+        height: auto;
+    }
+}

@@ -33,6 +33,7 @@
 .title {
     margin: 0;
     margin-bottom: 12px;
+    margin-left: 16px;
     font-size: 32px;
     color: rgb(255, 255, 255);
 }
@@ -46,6 +47,8 @@
 
 #form {
     height: 100%;
+    padding: 0px;
+    margin: 0px;
     align-items: stretch;
 }
 
@@ -69,8 +72,17 @@
     border-color: rgb(62, 62, 62);
     background-color: rgb(40, 40, 40);
     padding: 16px;
+    padding-left: 0px;
+    padding-right: 0px;
     display: flex;
     flex-direction: column;
+}
+
+#data hr {
+    width: 2px;
+    border: none;
+    display: block;
+    background-color: rgb(62, 62, 62);
 }
 
 #data .row_flex {
@@ -79,23 +91,97 @@
 
 #data .sec_data {
     flex: 1;
-    display: flex;
-    flex-direction: column;
     height: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
-#data .sec_data .check_block {
-    justify-items: center;
+#data .sec_data hr {
+    height: 2px;
+    width: auto;
+    display: block;
+    border: none;
+    background-color: rgb(62, 62, 62);
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+#data .sec_data .check_block,
+#data .sec_data .number_block,
+#data .sec_data .select_block,
+#data .sec_data .textarea_block,
+#data .sec_data .button_block {
+    justify-items: left;
     align-items: center;
     flex: 1;
     font-size: 20px;
     color: rgb(255, 255, 255);
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
-#data .sec_data .check_block p {
+#data .sec_data .check_block p,
+#data .sec_data .number_block p:nth-of-type(1),
+#data .sec_data .select_block p,
+#data .sec_data .textarea_block p {
+    margin: 0;
+    padding-right: 12px;
+}
+#data .sec_data .check_block input {
     margin: 0;
 }
+#data .sec_data .number_block input {
+    margin: 0;
+    background-color: rgb(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    border-style: solid;
+    border-color: rgb(100, 100, 100, 0.7);
+    border-width: 0px;
+    border-bottom-width: 1px;
+    font-size: 16px;
+    width: 10%;
+}
+#data .sec_data .number_block p:nth-of-type(2) {
+    margin: 0;
+    padding-left: 12px;
+}
+#data .sec_data .select_block select {
+    margin: 0;
+    background-color: rgb(255, 255, 255, 0);
+    color: rgb(255, 255, 255, 1);
+    border-style: none;
+    font-size: 16px;
+    width: 27%;
+}
+#data .sec_data .select_block select option {
+    background-color: rgb(40, 40, 40, 1);
+    color: rgb(255, 255, 255, 1);
+    border-style: none;
+}
+#data .sec_data .textarea_block textarea {
+    flex: 3;
+    margin: 0;
+    margin-top: 8px;
+    width: 99%;
+    background-color: rgb(255, 255, 255, 0);
+    font-size: 16px;
+    color: rgb(255, 255, 255, 1);
+}
+#data .sec_data .button_block input {
+    font-size: 24px;
+    background-color: rgb(255, 255, 255, 0);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 8px 16px;
+}
+#data .sec_data .button_block input[type="reset"]:hover {
+    background-color: rgb(255, 80, 80, 0.7);
+}
 
-@media (max-aspect-ratio: 1/1)  {
+@media (max-aspect-ratio: 1/1) {
     #form {
         flex-direction: column;
     }
@@ -105,5 +191,14 @@
     }
     .input_block input {
         font-size: 0.8em;
+    }
+
+    #data > div:nth-of-type(1) {
+        flex-direction: column;
+    }
+    
+    #data hr {
+        width: auto;
+        height: 2px;
     }
 }
