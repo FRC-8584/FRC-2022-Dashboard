@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap);
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(../fonts/Noto_Sans_TC/Noto_Sans_TC.css);
+@import url(../fonts/Material_Icons/Material_Icons.css);
 
 html,
 body {
@@ -14,7 +14,7 @@ body {
     height: 48px;
     text-align: left;
     color: rgb(255, 255, 255);
-    font-size: 2em;
+    font-size: 2ezm;
     margin: 12px 24px;
 }
 
@@ -26,14 +26,9 @@ body {
     font-family: 'Noto Sans TC', sans-serif;
 }
 
-.material-icons {
-    font-family: "Material Icons";
-    cursor: default;
-}
-
 #content {
     height: 100%;
     background-color: rgb(31, 31, 31);
-    padding-top: 64px;
-    padding-left: 48px;
+    padding: 8px;
+    padding-top: 72px;
 }

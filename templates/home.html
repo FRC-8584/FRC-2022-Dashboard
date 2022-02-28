@@ -10,6 +10,29 @@
     </head>
     <body>
         <div id="top-bar" include-html="top-bar.html"></div>
+        <div id="content">
+            <form action="/", method="post">
+                <div id="info">
+                    <p class="cfont title">填寫人資訊</p>
+                    <div class="input_block">
+                        <p class="cfont index">姓名</p>
+                        <input class="cfont" placeholder="請輸入您的姓名">
+                    </div>
+                    <div class="input_block">
+                        <p class="cfont index">紀錄隊伍</p>
+                        <input class="cfont" placeholder="請輸入你所記錄的隊伍編號">
+                    </div>
+                    <div class="input_block">
+                        <p class="cfont index">紀錄場次</p>
+                        <input class="cfont" placeholder="請輸入你所記錄的比賽場次">
+                    </div>
+                </div>
+                <div id="data">
+                    <p class="cfont title">紀錄資料</p>
+                    <input placeholder="請輸入隊伍編號">
+                </div>
+            </form>
+        </div>
     </body>
     <script>includeHTML()</script>
 </html>
