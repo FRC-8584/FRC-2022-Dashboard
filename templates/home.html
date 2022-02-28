@@ -15,18 +15,61 @@
         <div id="content">
             <form id="form" class="row_flex">
                 <div id="info">
-                    <p class="cfont title">填寫人資訊</p>
-                    <div class="input_block row_flex">
-                        <p class="cfont">姓名</p>
-                        <input name="recorder-name" class="cfont" placeholder="請輸入你的姓名">
+                    <div class="info_block">
+                        <p class="cfont info_title">填寫人資訊</p>
+                        <div class="input_block row_flex">
+                            <p class="cfont">姓名</p>
+                            <input name="recorder-name" class="cfont" placeholder="請輸入你的姓名">
+                        </div>
+                        <div class="input_block row_flex">
+                            <p class="cfont">紀錄隊伍</p>
+                            <input name="recorder-team" class="cfont" placeholder="請輸入你所記錄的隊伍編號">
+                        </div>
+                        <div class="input_block row_flex">
+                            <p class="cfont">紀錄場次</p>
+                            <input name="recorder-screen" class="cfont" placeholder="請輸入你所記錄的比賽場次">
+                        </div>
                     </div>
-                    <div class="input_block row_flex">
-                        <p class="cfont">紀錄隊伍</p>
-                        <input name="recorder-team" class="cfont" placeholder="請輸入你所記錄的隊伍編號">
+                    <div class="info_block">
+                        <p class="cfont info_title">檔案上傳</p>
+                        <div class="file_block">
+                            <p class="cfont">影片及相片紀錄上傳</p>
+                            <input type="file" name="file[]" multiple>
+                        </div>
                     </div>
-                    <div class="input_block row_flex">
-                        <p class="cfont">紀錄場次</p>
-                        <input name="recorder-screen" class="cfont" placeholder="請輸入你所記錄的比賽場次">
+                    <div class="info_block">
+                        <p class="cfont sec_info_title">版本資訊</p>
+                        <div class="message_block row_flex">
+                            <p class="cfont">目前版本</p>
+                            <p class="cfont">V 1.0.0</p>
+                        </div>
+                        <div class="message_block row_flex">
+                            <p class="cfont">前端/後端</p>
+                            <p class="cfont">HTML、CSS、JS / Flask</p>
+                        </div>
+                        <div class="message_block row_flex">
+                            <p class="cfont">後端/數據存儲</p>
+                            <p class="cfont">Python / JSON</p>
+                        </div>
+                        <div class="message_block row_flex">
+                            <p class="cfont">Github</p>
+                            <a href="https://github.com/FRC-8584/FRC-2022-Dashboard" class="cfont" target="_blank">FRC-2022-Dashboard</a>
+                        </div>
+                    </div>
+                    <div class="info_block">
+                        <p class="cfont sec_info_title">開發者資訊</p>
+                        <div class="dev_block row_flex">
+                            <p class="cfont">FRC 8584程式組長</p>
+                            <p class="cfont space">莊智皓</p>
+                        </div>
+                        <div class="dev_block row_flex">
+                            <p class="cfont">Instagram</p>
+                            <a href="https://www.instagram.com/zhi_hao_1021" class="cfont space" target="_blank">zhi_hao_1021</a>
+                        </div>
+                        <div class="dev_block row_flex">
+                            <p class="cfont">Discord</p>
+                            <p class="cfont space">ΥΕΕ#3911</a>
+                        </div>
                     </div>
                 </div>
                 <div id="data">
@@ -110,6 +153,7 @@
                             <hr>
                             <div class="button_block row_flex">
                                 <input type="reset" class="cfont" value="重設表單">
+                                <button class="cfont">送出表單</button>
                             </div>
                         </div>
                     </div>

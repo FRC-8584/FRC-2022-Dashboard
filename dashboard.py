@@ -51,6 +51,18 @@ class Web_UI():
             return render_template("home.html")
         return redirect(url_for("login"))
 
+    @app.route("/rule")
+    def rule():
+        if Key_Manger.check(request.cookies.get("key")):
+            return render_template("rule.html")
+        return redirect(url_for("login"))
+
+    @app.route("/data")
+    def data():
+        if Key_Manger.check(request.cookies.get("key")):
+            return render_template("data.html")
+        return redirect(url_for("login"))
+
     @app.route("/logout")
     def logout():
         Key_Manger.delete(request.cookies.get("key"))

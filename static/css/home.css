@@ -5,13 +5,20 @@
     flex-direction: row;
 }
 
-.input_block {
+.input_block,
+.message_block,
+.dev_block {
     width: 100%;
     padding: 0;
     padding-top: 8px;
     padding-bottom: 8px;
     margin-top: 4px;
     margin-bottom: 4px;
+}
+.message_block,
+.dev_block {
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 .input_block p {
     margin: 0px;
@@ -28,13 +35,139 @@
     border-width: 0px;
     border-bottom-width: 1px;
     font-size: 16px;
+    margin-left: 12px;
+}
+.message_block p,
+.dev_block p {
+    margin: 0px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+.message_block a,
+.dev_block a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.message_block p:nth-child(1) {
+    flex: 2;
+}
+.message_block p:nth-child(2),
+.message_block a {
+    flex: 5;
+}
+.dev_block p:nth-child(1) {
+    flex: 1;
+}
+.dev_block p:nth-child(2),
+.dev_block a {
+    flex: 2;
+}
+.file_block,
+.check_block,
+.number_block,
+.select_block,
+.textarea_block,
+.button_block {
+    justify-items: left;
+    align-items: center;
+    flex: 1;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.file_block {
+    margin-bottom: 0;
+}
+.button_block {
+    justify-content: right;
+}
+.file_block p,
+.check_block p,
+.number_block p:nth-of-type(1),
+.select_block p,
+.textarea_block p {
+    margin: 0;
+    padding-right: 12px;
+}
+.file_block input {
+    margin-top: 12px;
+}
+.check_block input {
+    margin: 0;
+}
+.number_block input {
+    margin: 0;
+    background-color: rgb(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    border-style: solid;
+    border-color: rgb(100, 100, 100, 0.7);
+    border-width: 0px;
+    border-bottom-width: 1px;
+    font-size: 16px;
+    width: 10%;
+}
+.number_block p:nth-of-type(2) {
+    margin: 0;
+    padding-left: 12px;
+}
+.select_block select {
+    margin: 0;
+    background-color: rgb(255, 255, 255, 0);
+    color: rgb(255, 255, 255, 1);
+    border-style: none;
+    font-size: 16px;
+    width: 27%;
+}
+.select_block select option {
+    background-color: rgb(40, 40, 40, 1);
+    color: rgb(255, 255, 255, 1);
+    border-style: none;
+}
+.textarea_block textarea {
+    flex: 3;
+    margin: 0;
+    margin-top: 8px;
+    width: 99%;
+    background-color: rgb(255, 255, 255, 0);
+    font-size: 16px;
+    color: rgb(255, 255, 255, 1);
+}
+.button_block input,
+.button_block button {
+    font-size: 18px;
+    background-color: rgb(255, 255, 255, 0);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 8px 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.button_block input:hover {
+    background-color: rgb(255, 80, 80, 0.7);
+}
+.button_block button:hover {
+    background-color: rgb(80, 255, 80, 0.7);
 }
 
-.title {
+.title,
+.info_title {
     margin: 0;
-    margin-bottom: 12px;
     margin-left: 16px;
     font-size: 32px;
+    color: rgb(255, 255, 255);
+}
+.info_title {
+    margin-left: 0;
+}
+.sec_info_title {
+    margin: 0;
+    margin-bottom: 12px;
+    font-size: 26px;
     color: rgb(255, 255, 255);
 }
 
@@ -53,7 +186,13 @@
 }
 
 #info {
-    flex: 1;
+    flex: 2;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+#info .info_block {
     margin: 8px;
     border-style: solid;
     border-width: 1px;
@@ -61,10 +200,12 @@
     border-color: rgb(62, 62, 62);
     background-color: rgb(40, 40, 40);
     padding: 16px;
+    padding-bottom: 8px;
+    flex-grow: 1;
 }
 
 #data {
-    flex: 3;
+    flex: 5;
     margin: 8px;
     border-style: solid;
     border-width: 1px;
@@ -104,81 +245,6 @@
     background-color: rgb(62, 62, 62);
     margin-top: 12px;
     margin-bottom: 12px;
-}
-
-#data .sec_data .check_block,
-#data .sec_data .number_block,
-#data .sec_data .select_block,
-#data .sec_data .textarea_block,
-#data .sec_data .button_block {
-    justify-items: left;
-    align-items: center;
-    flex: 1;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    margin-top: 6px;
-    margin-bottom: 6px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-}
-#data .sec_data .check_block p,
-#data .sec_data .number_block p:nth-of-type(1),
-#data .sec_data .select_block p,
-#data .sec_data .textarea_block p {
-    margin: 0;
-    padding-right: 12px;
-}
-#data .sec_data .check_block input {
-    margin: 0;
-}
-#data .sec_data .number_block input {
-    margin: 0;
-    background-color: rgb(255, 255, 255, 0);
-    color: rgb(255, 255, 255);
-    border-style: solid;
-    border-color: rgb(100, 100, 100, 0.7);
-    border-width: 0px;
-    border-bottom-width: 1px;
-    font-size: 16px;
-    width: 10%;
-}
-#data .sec_data .number_block p:nth-of-type(2) {
-    margin: 0;
-    padding-left: 12px;
-}
-#data .sec_data .select_block select {
-    margin: 0;
-    background-color: rgb(255, 255, 255, 0);
-    color: rgb(255, 255, 255, 1);
-    border-style: none;
-    font-size: 16px;
-    width: 27%;
-}
-#data .sec_data .select_block select option {
-    background-color: rgb(40, 40, 40, 1);
-    color: rgb(255, 255, 255, 1);
-    border-style: none;
-}
-#data .sec_data .textarea_block textarea {
-    flex: 3;
-    margin: 0;
-    margin-top: 8px;
-    width: 99%;
-    background-color: rgb(255, 255, 255, 0);
-    font-size: 16px;
-    color: rgb(255, 255, 255, 1);
-}
-#data .sec_data .button_block input {
-    font-size: 24px;
-    background-color: rgb(255, 255, 255, 0);
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    padding: 8px 16px;
-}
-#data .sec_data .button_block input[type="reset"]:hover {
-    background-color: rgb(255, 80, 80, 0.7);
 }
 
 @media (max-aspect-ratio: 1/1) {
