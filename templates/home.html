@@ -8,33 +8,81 @@
         <link rel="icon" href="../static/img/favicon.ico">
         <script src="../static/js/include-html.js"></script>
         <script src="../static/js/side-bar.js"></script>
+        <script src="../static/js/home.js"></script>
     </head>
-    <body>
+    <body onload="get_data()">
         <div id="top-bar" include-html="top-bar.html"></div>
         <div id="side-bar" include-html="side-bar.html"></div>
         <div id="content">
-            <form id="form" class="row_flex">
+            <form id="form" class="row_flex" autocomplete="on">
                 <div id="info">
                     <div class="info_block">
                         <p class="cfont info_title">填寫人資訊</p>
                         <div class="input_block row_flex">
                             <p class="cfont">姓名</p>
-                            <input name="recorder-name" class="cfont" placeholder="請輸入你的姓名">
+                            <input name="recorder-name" class="cfont" placeholder="請輸入你的姓名" required>
                         </div>
-                        <div class="input_block row_flex">
+                        <div class="select_block row_flex">
                             <p class="cfont">紀錄隊伍</p>
-                            <input name="recorder-team" class="cfont" placeholder="請輸入你所記錄的隊伍編號">
+                            <select name="recorder-team" onchange="get_data()">
+                                <option value="4253" class="cfont">4253 Raid Zero</option>
+                                <option value="6083" class="cfont">6083 Overlooking</option>
+                                <option value="6191" class="cfont">6191 RoboKryptonite</option>
+                                <option value="6947" class="cfont">6947 Savage Tumaz</option>
+                                <option value="6998" class="cfont">6998 NNKIEH</option>
+                                <option value="7130" class="cfont">7130 Future Shock</option>
+                                <option value="7497" class="cfont">7497 MARAHO</option>
+                                <option value="7526" class="cfont">7526 Welcome to team</option>
+                                <option value="7527" class="cfont">7527 Kaohsiung power</option>
+                                <option value="7551" class="cfont">7551 Extreme Mechanism</option>
+                                <option value="7589" class="cfont">7589 Lishan Blue Magpie</option>
+                                <option value="7632" class="cfont">7632 An Kang Robotics Maker</option>
+                                <option value="7636" class="cfont">7636 Robomania</option>
+                                <option value="7645" class="cfont">7645 NK MTC</option>
+                                <option value="7673" class="cfont">7673 Formosan Sika</option>
+                                <option value="7709" class="cfont">7709 Formosa Pangolin</option>
+                                <option value="7741" class="cfont">7741 RSSH</option>
+                                <option value="8020" class="cfont">8020 Cyberpunk</option>
+                                <option value="8121" class="cfont">8121 I.C.R.T.</option>
+                                <option value="8129" class="cfont">8129 ZZRT</option>
+                                <option value="8169" class="cfont">8169 Kangshan Super Steel Robot</option>
+                                <option value="8176" class="cfont">8176 Alien Robotics</option>
+                                <option value="8270" class="cfont">8270 Double N</option>
+                                <option value="8503" class="cfont">8503 Raid One</option>
+                                <option value="8569" class="cfont">8569 Zhonghe</option>
+                                <option value="8584" class="cfont">8584 Infinity Robotics</option>
+                                <option value="8585" class="cfont">8585 bombax leopard</option>
+                                <option value="8595" class="cfont">8595 This Is How We Play</option>
+                                <option value="8723" class="cfont">8723 Woodpanda</option>
+                                <option value="8725" class="cfont">8725 MistyPanther</option>
+                                <option value="8790" class="cfont">8790 Departure</option>
+                                <option value="8805" class="cfont">8805 NKST36</option>
+                                <option value="8806" class="cfont">8806 Our Lady of Providence Dream League</option>
+                                <option value="8807" class="cfont">8807 SCREW IT</option>
+                                <option value="8894" class="cfont">8894 HandShake</option>
+                            </select>
                         </div>
-                        <div class="input_block row_flex">
+                        <div class="select_block row_flex">
                             <p class="cfont">紀錄場次</p>
-                            <input name="recorder-screen" class="cfont" placeholder="請輸入你所記錄的比賽場次">
+                            <select name="recorder-screen" onchange="get_data()">
+                                <option value="3-4-1" class="cfont">3/4 第1場</option>
+                                <option value="3-4-2" class="cfont">3/4 第2場</option>
+                                <option value="3-4-3" class="cfont">3/4 第3場</option>
+                                <option value="3-4-4" class="cfont">3/4 第4場</option>
+                                <option value="3-4-5" class="cfont">3/4 第5場</option>
+                                <option value="3-4-6" class="cfont">3/4 第6場</option>
+                                <option value="3-4-7" class="cfont">3/4 第7場</option>
+                                <option value="3-4-8" class="cfont">3/4 第8場</option>
+                                <option value="3-4-9" class="cfont">3/4 第9場</option>
+                                <option value="3-4-10" class="cfont">3/4 第10場</option>
+                            </select>
                         </div>
                     </div>
                     <div class="info_block">
                         <p class="cfont info_title">檔案上傳</p>
                         <div class="file_block">
                             <p class="cfont">影片及相片紀錄上傳</p>
-                            <input type="file" name="file[]" multiple>
+                            <!-- <input type="file" name="file[]" multiple> -->
                         </div>
                     </div>
                     <div class="info_block">
@@ -83,7 +131,7 @@
                             </div>
                             <div class="number_block row_flex">
                                 <p class="cfont">射球次數(高)</p>
-                                <input name="auto-hight" type="number" value="0" min="0" step="1" class="cfont">
+                                <input name="auto-height" type="number" value="0" min="0" step="1" class="cfont">
                                 <p class="cfont">次</p>
                             </div>
                             <div class="number_block row_flex">
@@ -95,7 +143,7 @@
                             <p class="cfont sec_title">手動階段</p>
                             <div class="number_block row_flex">
                                 <p class="cfont">射球次數(高)</p>
-                                <input name="manual-high" type="number" value="0" min="0" step="1" class="cfont">
+                                <input name="manual-height" type="number" value="0" min="0" step="1" class="cfont">
                                 <p class="cfont">次</p>
                             </div>
                             <div class="number_block row_flex">
@@ -111,6 +159,34 @@
                                     <option value="2" class="cfont">第二階</option>
                                     <option value="3" class="cfont">第三階</option>
                                     <option value="4" class="cfont">第四階</option>
+                                </select>
+                            </div>
+                            <div class="select_block row_flex">
+                                <p class="cfont">隊友吊掛-1</p>
+                                <select name="manual-hang-1">
+                                    <option value="0" class="cfont">無吊掛/吊掛失敗</option>
+                                    <option value="1" class="cfont">第一階</option>
+                                    <option value="2" class="cfont">第二階</option>
+                                    <option value="3" class="cfont">第三階</option>
+                                    <option value="4" class="cfont">第四階</option>
+                                </select>
+                            </div>
+                            <div class="select_block row_flex">
+                                <p class="cfont">隊友吊掛-2</p>
+                                <select name="manual-hang-2">
+                                    <option value="0" class="cfont">無吊掛/吊掛失敗</option>
+                                    <option value="1" class="cfont">第一階</option>
+                                    <option value="2" class="cfont">第二階</option>
+                                    <option value="3" class="cfont">第三階</option>
+                                    <option value="4" class="cfont">第四階</option>
+                                </select>
+                            </div>
+                            <div class="select_block row_flex">
+                                <p class="cfont">比賽結果</p>
+                                <select name="win">
+                                    <option value="0" class="cfont">失敗</option>
+                                    <option value="1" class="cfont">平手</option>
+                                    <option value="2" class="cfont">獲勝</option>
                                 </select>
                             </div>
                             <hr>
@@ -153,7 +229,7 @@
                             <hr>
                             <div class="button_block row_flex">
                                 <input type="reset" class="cfont" value="重設表單">
-                                <button class="cfont">送出表單</button>
+                                <button class="cfont" onclick="send_form()">送出表單</button>
                             </div>
                         </div>
                     </div>

@@ -36,6 +36,7 @@
     border-bottom-width: 1px;
     font-size: 16px;
     margin-left: 12px;
+    color: rgb(255, 255, 255);
 }
 .message_block p,
 .dev_block p {
@@ -202,6 +203,24 @@
     padding: 16px;
     padding-bottom: 8px;
     flex-grow: 1;
+}
+#info .select_block p {
+    flex: 1;
+    margin: 0px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+#info .select_block select {
+    margin: 0;
+    flex: 3;
+    background-color: rgb(255, 255, 255, 0);
+    border-style: solid;
+    border-color: rgb(100, 100, 100, 0.7);
+    border-width: 0px;
+    border-bottom-width: 1px;
+    font-size: 16px;
+    margin-left: 0px;
+    color: rgb(255, 255, 255);
 }
 
 #data {

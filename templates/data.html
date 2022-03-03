@@ -8,12 +8,239 @@
         <link rel="icon" href="../static/img/favicon.ico">
         <script src="../static/js/include-html.js"></script>
         <script src="../static/js/side-bar.js"></script>
+        <script src="../static/js/data.js"></script>
     </head>
-    <body>
+    <body onload="get_data()">
         <div id="top-bar" include-html="top-bar.html"></div>
         <div id="side-bar" include-html="side-bar.html"></div>
         <div id="content">
-
+            <form id="form" class="row_flex" autocomplete="on">
+                <div id="info">
+                    <div class="info_block">
+                        <p class="cfont info_title">填寫人資訊</p>
+                        <div class="input_block row_flex">
+                            <p class="cfont">姓名</p>
+                            <input name="recorder-name" class="cfont" placeholder="請輸入你的姓名" disabled>
+                        </div>
+                        <div class="select_block row_flex">
+                            <p class="cfont">紀錄隊伍</p>
+                            <select name="recorder-team" onchange="get_data()">
+                                <option value="4253" class="cfont">4253 Raid Zero</option>
+                                <option value="6083" class="cfont">6083 Overlooking</option>
+                                <option value="6191" class="cfont">6191 RoboKryptonite</option>
+                                <option value="6947" class="cfont">6947 Savage Tumaz</option>
+                                <option value="6998" class="cfont">6998 NNKIEH</option>
+                                <option value="7130" class="cfont">7130 Future Shock</option>
+                                <option value="7497" class="cfont">7497 MARAHO</option>
+                                <option value="7526" class="cfont">7526 Welcome to team</option>
+                                <option value="7527" class="cfont">7527 Kaohsiung power</option>
+                                <option value="7551" class="cfont">7551 Extreme Mechanism</option>
+                                <option value="7589" class="cfont">7589 Lishan Blue Magpie</option>
+                                <option value="7632" class="cfont">7632 An Kang Robotics Maker</option>
+                                <option value="7636" class="cfont">7636 Robomania</option>
+                                <option value="7645" class="cfont">7645 NK MTC</option>
+                                <option value="7673" class="cfont">7673 Formosan Sika</option>
+                                <option value="7709" class="cfont">7709 Formosa Pangolin</option>
+                                <option value="7741" class="cfont">7741 RSSH</option>
+                                <option value="8020" class="cfont">8020 Cyberpunk</option>
+                                <option value="8121" class="cfont">8121 I.C.R.T.</option>
+                                <option value="8129" class="cfont">8129 ZZRT</option>
+                                <option value="8169" class="cfont">8169 Kangshan Super Steel Robot</option>
+                                <option value="8176" class="cfont">8176 Alien Robotics</option>
+                                <option value="8270" class="cfont">8270 Double N</option>
+                                <option value="8503" class="cfont">8503 Raid One</option>
+                                <option value="8569" class="cfont">8569 Zhonghe</option>
+                                <option value="8584" class="cfont">8584 Infinity Robotics</option>
+                                <option value="8585" class="cfont">8585 bombax leopard</option>
+                                <option value="8595" class="cfont">8595 This Is How We Play</option>
+                                <option value="8723" class="cfont">8723 Woodpanda</option>
+                                <option value="8725" class="cfont">8725 MistyPanther</option>
+                                <option value="8790" class="cfont">8790 Departure</option>
+                                <option value="8805" class="cfont">8805 NKST36</option>
+                                <option value="8806" class="cfont">8806 Our Lady of Providence Dream League</option>
+                                <option value="8807" class="cfont">8807 SCREW IT</option>
+                                <option value="8894" class="cfont">8894 HandShake</option>
+                            </select>
+                        </div>
+                        <div class="select_block row_flex">
+                            <p class="cfont">紀錄場次</p>
+                            <select name="recorder-screen" onchange="get_data()">
+                                <option value="3-4-1" class="cfont">3/4 第1場</option>
+                                <option value="3-4-2" class="cfont">3/4 第2場</option>
+                                <option value="3-4-3" class="cfont">3/4 第3場</option>
+                                <option value="3-4-4" class="cfont">3/4 第4場</option>
+                                <option value="3-4-5" class="cfont">3/4 第5場</option>
+                                <option value="3-4-6" class="cfont">3/4 第6場</option>
+                                <option value="3-4-7" class="cfont">3/4 第7場</option>
+                                <option value="3-4-8" class="cfont">3/4 第8場</option>
+                                <option value="3-4-9" class="cfont">3/4 第9場</option>
+                                <option value="3-4-10" class="cfont">3/4 第10場</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="info_block">
+                        <p class="cfont info_title">檔案上傳</p>
+                        <div class="file_block">
+                            <p class="cfont">影片及相片紀錄上傳</p>
+                            <!-- <input type="file" name="file[]" multiple> -->
+                        </div>
+                    </div>
+                    <div class="info_block">
+                        <p class="cfont sec_info_title">版本資訊</p>
+                        <div class="message_block row_flex">
+                            <p class="cfont">目前版本</p>
+                            <p class="cfont">V 1.0.3</p>
+                        </div>
+                        <div class="message_block row_flex">
+                            <p class="cfont">前端/後端</p>
+                            <p class="cfont">HTML、CSS、JS / Flask</p>
+                        </div>
+                        <div class="message_block row_flex">
+                            <p class="cfont">後端/數據存儲</p>
+                            <p class="cfont">Python / JSON</p>
+                        </div>
+                        <div class="message_block row_flex">
+                            <p class="cfont">Github</p>
+                            <a href="https://github.com/FRC-8584/FRC-2022-Dashboard" class="cfont" target="_blank">FRC-2022-Dashboard</a>
+                        </div>
+                    </div>
+                    <div class="info_block">
+                        <p class="cfont sec_info_title">開發者資訊</p>
+                        <div class="dev_block row_flex">
+                            <p class="cfont">FRC 8584程式組長</p>
+                            <p class="cfont space">莊智皓</p>
+                        </div>
+                        <div class="dev_block row_flex">
+                            <p class="cfont">Instagram</p>
+                            <a href="https://www.instagram.com/zhi_hao_1021" class="cfont space" target="_blank">zhi_hao_1021</a>
+                        </div>
+                        <div class="dev_block row_flex">
+                            <p class="cfont">Discord</p>
+                            <p class="cfont space">ΥΕΕ#3911</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="data">
+                    <p class="cfont title">紀錄資訊</p>
+                    <div class="row_flex data_div">
+                        <div class="sec_data">
+                            <p class="cfont sec_title">自動階段</p>
+                            <div class="check_block row_flex">
+                                <p class="cfont">滑行成功</p>
+                                <input name="auto-slide" type="checkbox" class="cfont" disabled>
+                            </div>
+                            <div class="number_block row_flex">
+                                <p class="cfont">射球次數(高)</p>
+                                <input name="auto-height" type="number" value="0" min="0" step="1" class="cfont" disabled>
+                                <p class="cfont">次</p>
+                            </div>
+                            <div class="number_block row_flex">
+                                <p class="cfont">射球次數(低)</p>
+                                <input name="auto-low" type="number" value="0" min="0" step="1" class="cfont" disabled>
+                                <p class="cfont">次</p>
+                            </div>
+                            <hr>
+                            <p class="cfont sec_title">手動階段</p>
+                            <div class="number_block row_flex">
+                                <p class="cfont">射球次數(高)</p>
+                                <input name="manual-height" type="number" value="0" min="0" step="1" class="cfont" disabled>
+                                <p class="cfont">次</p>
+                            </div>
+                            <div class="number_block row_flex">
+                                <p class="cfont">射球次數(低)</p>
+                                <input name="manual-low" type="number" value="0" min="0" step="1" class="cfont" disabled>
+                                <p class="cfont">次</p>
+                            </div>
+                            <div class="select_block row_flex">
+                                <p class="cfont">吊掛階級</p>
+                                <select name="manual-hang" disabled>
+                                    <option value="0" class="cfont">無吊掛/吊掛失敗</option>
+                                    <option value="1" class="cfont">第一階</option>
+                                    <option value="2" class="cfont">第二階</option>
+                                    <option value="3" class="cfont">第三階</option>
+                                    <option value="4" class="cfont">第四階</option>
+                                </select>
+                            </div>
+                            <div class="select_block row_flex">
+                                <p class="cfont">隊友吊掛-1</p>
+                                <select name="manual-hang-1" disabled>
+                                    <option value="0" class="cfont">無吊掛/吊掛失敗</option>
+                                    <option value="1" class="cfont">第一階</option>
+                                    <option value="2" class="cfont">第二階</option>
+                                    <option value="3" class="cfont">第三階</option>
+                                    <option value="4" class="cfont">第四階</option>
+                                </select>
+                            </div>
+                            <div class="select_block row_flex">
+                                <p class="cfont">隊友吊掛-2</p>
+                                <select name="manual-hang-2" disabled>
+                                    <option value="0" class="cfont">無吊掛/吊掛失敗</option>
+                                    <option value="1" class="cfont">第一階</option>
+                                    <option value="2" class="cfont">第二階</option>
+                                    <option value="3" class="cfont">第三階</option>
+                                    <option value="4" class="cfont">第四階</option>
+                                </select>
+                            </div>
+                            <div class="select_block row_flex">
+                                <p class="cfont">比賽結果</p>
+                                <select name="win" disabled>
+                                    <option value="0" class="cfont">失敗</option>
+                                    <option value="1" class="cfont">平手</option>
+                                    <option value="2" class="cfont">獲勝</option>
+                                </select>
+                            </div>
+                            <hr>
+                            <p class="cfont sec_title">懲罰紀錄</p>
+                            <div class="number_block row_flex">
+                                <p class="cfont">犯規</p>
+                                <input name="foul" type="number" value="0" min="0" step="1" class="cfont" disabled>
+                                <p class="cfont">次</p>
+                            </div>
+                            <div class="number_block row_flex">
+                                <p class="cfont">技術犯規</p>
+                                <input name="tech-foul" type="number" value="0" min="0" step="1" class="cfont" disabled>
+                                <p class="cfont">次</p>
+                            </div>
+                            <div class="number_block row_flex">
+                                <p class="cfont">黃牌</p>
+                                <input name="yellow-card" type="number" value="0" min="0" step="1" max="2" class="cfont" disabled>
+                                <p class="cfont">次</p>
+                            </div>
+                            <div class="check_block row_flex">
+                                <p class="cfont">紅牌</p>
+                                <input name="red-card" type="checkbox" class="cfont" disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="sec_data">
+                            <p class="cfont sec_title">比賽狀況</p>
+                            <div class="textarea_block">
+                                <p class="cfont">優點</p>
+                                <textarea name="good" class="cfont" placeholder="請輸入該隊的優點" rows="5" disabled></textarea>
+                            </div>
+                            <div class="textarea_block">
+                                <p class="cfont">缺點</p>
+                                <textarea name="bad" class="cfont" placeholder="請輸入該隊的缺點" rows="5" disabled></textarea>
+                            </div>
+                            <div class="textarea_block">
+                                <p class="cfont">性質</p>
+                                <textarea name="spec" class="cfont" placeholder="請輸入該隊的性質(如進攻/防守...)" rows="5" disabled></textarea>
+                            </div>
+                            <hr>
+                            <div class="score_block row_flex">
+                                <p class="cfont">本場分數</p>
+                                <p name="Score" class="cfont">0</p>
+                                <p class="cfont">分</p>
+                            </div>
+                            <div class="score_block row_flex">
+                                <p class="cfont">RP</p>
+                                <p name="RP_Score" class="cfont">0</p>
+                                <p class="cfont">分</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </body>
     <script>includeHTML()</script>

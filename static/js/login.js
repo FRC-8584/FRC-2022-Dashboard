@@ -9,12 +9,12 @@ function logincheck() {
     xhr.setRequestHeader("Request-type", "login");
     xhr.send(JSON.stringify(data));
     xhr.onload = function () {
-            if (JSON.parse(xhr.responseText).successed){
-                document.querySelector(".login-fail").style.display = "none"
-                document.location.href="/";
-            }
-            else{
-                document.querySelector(".login-fail").style.display = ""
-            }
-        };
+        if (JSON.parse(xhr.responseText).successed){
+            document.querySelector(".login-fail").style.display = "none"
+            document.location.href="/";
+        }
+        else{
+            document.querySelector(".login-fail").style.display = ""
+        }
+    };
 }
