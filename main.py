@@ -11,7 +11,7 @@ def flask_job():
     web.run()
 
 def check_update() -> bool:
-    remote_id = json.loads(requests.get("https://api.github.com/repos/FRC-8584/FRC-2022-Dashboard/commits", headers={"Authorization": "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"}).content)[0]["sha"]
+    remote_id = json.loads(requests.get("https://api.github.com/repos/FRC-8584/FRC-2022-Dashboard/commits").content)[0]["sha"]
     git_id = str(Popen("git rev-parse HEAD", shell=True, stdout=PIPE).stdout.read())
     if remote_id not in git_id:
         Popen("git stash", shell=True, stdout=PIPE).stdout.read()
@@ -26,10 +26,10 @@ if __name__ == "__main__":
     flask_thread = Thread(target=flask_job)
     flask_thread.start()
 
-    while True:
-        if check_update():
-            flask_thread.stop()
-            flask_thread.join()
-            system("start cmd /c Start.cmd")
-            exit()
-        sleep(10)
+    # while True:
+    #     if check_update():
+    #         flask_thread.stop()
+    #         flask_thread.join()
+    #         system("start cmd /c Start.cmd")
+    #         exit()
+    #     sleep(10)
