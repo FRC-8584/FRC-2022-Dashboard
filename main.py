@@ -14,6 +14,7 @@ def check_update() -> bool:
     remote_id = json.loads(requests.get("https://api.github.com/repos/FRC-8584/FRC-2022-Dashboard/commits", headers={"Authorization": "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"}).content)[0]["sha"]
     git_id = str(Popen("git rev-parse HEAD", shell=True, stdout=PIPE).stdout.read())
     if remote_id not in git_id:
+        Popen("git stash", shell=True, stdout=PIPE).stdout.read()
         Popen("git pull", shell=True, stdout=PIPE).stdout.read()
         return True
     return False
