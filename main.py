@@ -11,14 +11,11 @@ def flask_job():
     web.run()
 
 def check_update() -> bool:
-    try:
-        remote_id = json.loads(requests.get("https://api.github.com/repos/FRC-8584/FRC-2022-Dashboard/commits").content)[0]["sha"]
-        git_id = str(Popen("git rev-parse HEAD", shell=True, stdout=PIPE).stdout.read())
-        if remote_id not in git_id:
-            Popen("git pull", shell=True, stdout=PIPE).stdout.read()
-            return True
-    except:
-        pass
+    remote_id = json.loads(requests.get("https://api.github.com/repos/FRC-8584/FRC-2022-Dashboard/commits").content)[0]["sha"]
+    git_id = str(Popen("git rev-parse HEAD", shell=True, stdout=PIPE).stdout.read())
+    if remote_id not in git_id:
+        Popen("git pull", shell=True, stdout=PIPE).stdout.read()
+        return True
     return False
 
 if __name__ == "__main__":
