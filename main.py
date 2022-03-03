@@ -10,20 +10,16 @@ def flask_job():
     web = Web_UI()
     web.run()
 
-def git_update():
-    while True:
-        try:
-            remote_id = json.loads(requests.get("https://api.github.com/repos/FRC-8584/FRC-2022-Dashboard/commits").content)[0]["sha"]
-            git_id = str(Popen("./PortableGit/bin/git rev-parse HEAD", shell=True, stdout=PIPE).stdout.read())
-            if remote_id not in git_id:
-                system("./PortableGit/bin/git pull")
-                flask_thread.stop()
-                flask_thread.join()
-                system("start cmd /c Start.cmd")
-                exit()
-        except:
-            pass
-        sleep(5)
+def check_update() -> bool:
+    try:
+        remote_id = json.loads(requests.get("https://api.github.com/repos/FRC-8584/FRC-2022-Dashboard/commits").content)[0]["sha"]
+        git_id = str(Popen("git rev-parse HEAD", shell=True, stdout=PIPE).stdout.read())
+        if remote_id not in git_id:
+            Popen("git pull", shell=True, stdout=PIPE).stdout.read()
+            return True
+    except:
+        pass
+    return False
 
 if __name__ == "__main__":
     if not isfile("data/key.json"):
@@ -31,3 +27,10 @@ if __name__ == "__main__":
 
     flask_thread = Thread(target=flask_job)
     flask_thread.start()
+
+    while True:
+        if check_update():
+            flask_thread.stop()
+            flask_thread.join()
+            system("start cmd /c Start.cmd")
+            exit()
